@@ -1,24 +1,58 @@
 import java.util.ArrayList;
 
 public class PokerPlayer extends Player implements Gambling {
-    ArrayList<Integer> chips = new ArrayList<Integer>();
-    Integer bet;
-    Hand hand = new PokerHand();
+    private Hand hand = new PokerHand();
+    private Boolean folded = false;
+
+
+
+    private Integer chips;
 
     public PokerPlayer(Person p) {
         super(p);
     }
 
 
+
     public void leaveGame(){}
-    public void call() {}
-    public void check() {}
-    public void fold() {}
-    public void raise() {}
-    public void makeBet() {}
+
+    public Integer call(Integer lastPlayerBet) {
+        return bet(lastPlayerBet);
+    }
+
+    public Integer check() {return call(0);}
+
+    public void fold() {
+        folded = true;
+    }
+
+    public Integer raise(Integer lastPlayerBet, Integer amountToRaise) {
+        return bet(lastPlayerBet + amountToRaise);
+    }
+
+    public Integer smallBlind() {
+        return bet(1);
+    }
+
+    public Integer bigBlind() {
+        return bet(2);
+    }
+
+    public Boolean isFolded() {
+        return folded;
+    }
+
+    public Integer getChip() {
+        return chips;
+    }
+
+    public void setChips(Integer chips) {
+        this.chips = chips;
+    }
 
     @Override
-    public Integer bet() {
-        return null;
+    public Integer bet(Integer numOfChipsToBet) {
+        chips -= numOfChipsToBet;
+        return numOfChipsToBet;
     }
 }
