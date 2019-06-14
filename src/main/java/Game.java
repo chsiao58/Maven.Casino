@@ -4,10 +4,10 @@ public abstract class Game {
     public Game(Player[] players) {
         this.players = players;
     }
-
-    abstract Boolean didWin(Player player);
+    public Game(){}
+//  abstract Boolean didWin(Player player);
     abstract void playGame();
-    abstract Boolean endOfGame();
+    abstract void endOfGame();
 
 
 }
