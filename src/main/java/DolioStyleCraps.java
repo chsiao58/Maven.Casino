@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class DolioStyleCraps extends DiceGame {
 
     public DolioStyleCraps(DStyleCrapsPlayer[] players) {
@@ -8,5 +6,7 @@ public class DolioStyleCraps extends DiceGame {
 
     public Boolean didWin(Player player) {return false;}
     public void playGame() {}
-    public void endOfGame() {}
+    public Boolean endOfGame() {
+        return null;
+    }
 }
