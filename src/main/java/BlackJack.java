@@ -4,7 +4,7 @@ public class BlackJack extends CardGame {
 
  //   PileOfCards deck = new PileOfCards();
 
-    public BlackJack(BlackJack_Player[] players, Integer numberOfDecks) {
+    public BlackJack(BlackJack_Player players, Integer numberOfDecks) {
         super(players, numberOfDecks);
     }
 

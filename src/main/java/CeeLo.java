@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class CeeLo extends DiceGame {
    private Integer pool;
 
-   public CeeLo(CeeLoPlayer[] players) {
+   public CeeLo(CeeLoPlayer players) {
       super(players, 3);
    }
 

@@ -8,7 +8,7 @@ public class Palace extends CardGame {
 //    PileOfCards deck = new PileOfCards();
     PileOfCards discard;
 
-    public Palace (Player[] players , Integer numberOfDecks) {
+    public Palace (Player players , Integer numberOfDecks) {
         super(players, numberOfDecks);
 
     }

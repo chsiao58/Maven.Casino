@@ -14,7 +14,7 @@ public class House implements Dealer {
 
 
     public House(Integer payoutRatio) {
-        this.houseWallet = 0;
+        this.houseWallet = 1000;
         this.payoutRatio = payoutRatio;
     }
 

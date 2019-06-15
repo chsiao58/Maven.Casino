@@ -3,8 +3,10 @@ public class PrasanthiPalace {
     public static void main(String[] args) {
         // write your tests before you start fucking with this
         run();
+
+
     }
-    public static void run() {
+    public  static void run() {
 //        Mediator mediator = new Mediator();
       Console console = new Console(System.in, System.out);
 //        mediator.parseInput(input);
@@ -19,5 +21,23 @@ public class PrasanthiPalace {
         console.print("1) Palace\n2) Texas Hold 'Em\n3) Black Jack\n4) Cee-lo\n5) Dolio Style Craps\n");
         console.println("You can also hang out in the lounge and get a drink or a bite to eat.");
         String first  = console.getStringInput("What would you like to do?");
+        if(first.equalsIgnoreCase("5"))
+            executeCraps(wallet, person);
+
     }
+    public  static void executeCraps(Double wallet, Person person){
+        Integer payOutratio=2;
+        Integer betchips=0;
+        House house=new House(payOutratio);
+        DStyleCrapsPlayer player=new DStyleCrapsPlayer(person,house.moneyToChips(wallet));
+        betchips=house.moneyToChips(wallet);
+        DolioStyleCraps craps=new DolioStyleCraps(player);
+        craps.playGame();
+        craps.endOfGame();
+        if(craps.didWin(player)) {
+            System.out.println("You won "+house.payout(betchips)+" Chips");
+        }
+    }
+
+
 }
