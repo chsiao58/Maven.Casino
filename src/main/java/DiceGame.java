@@ -13,8 +13,5 @@ public abstract class DiceGame extends Game {
         return dice;
     }
 
-    public void setDice(Dice dice) {
-        this.dice = dice;
-    }
 
 }

@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 
 public class DolioStyleCraps extends DiceGame {
     public DolioStyleCraps(DStyleCrapsPlayer[] players) {
@@ -22,7 +22,6 @@ public class DolioStyleCraps extends DiceGame {
 
     public void endOfGame() {
         boolean keepRolling=true;
-        boolean value=didWin((DStyleCrapsPlayer )players[0]);
         while(keepRolling) {
             if(dice.sum()==7||dice.sum()==11)
                 keepRolling=false;
