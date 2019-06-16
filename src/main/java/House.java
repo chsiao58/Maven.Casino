@@ -49,15 +49,20 @@ public class House implements Dealer {
         return decks;
     }
 
-    @Override
+
     public Hand dealHand(Integer numberOfC) {
         return null;
     }
 
-    @Override
+
     public Card dealCard(Integer numberOfCards) {
         return null;
 
+    }
+
+    @Override
+    public Card dealCard() {
+        return null;
     }
 
     @Override

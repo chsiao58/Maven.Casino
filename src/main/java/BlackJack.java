@@ -5,18 +5,20 @@ public class BlackJack extends CardGame {
 
 Integer sumHand = 0;
 
-    @Override
-    void playGame() {
+//    @Override
+//    void playGame() {
+//
+//    }
+//
+//    @Override
+//    void endOfGame() {
+//
+//    }
 
-    }
 
-    @Override
-    void endOfGame() {
+    public BlackJack(BlackJack_Player players, Integer numberOfDecks) {
+        super(players, numberOfDecks);
 
-    }
-
-    public BlackJack(BlackJack_Player[] players, Integer numberOfDecks) {
-        super(players, 5);
     }
     Decks blackJackDeck = new Decks(5);
     House house = new House(2, blackJackDeck);

@@ -9,7 +9,11 @@ public class Poker extends CardGame{
     List<PokerTurn> turns;
     Integer pool;
 
+<<<<<<< HEAD
     public Poker(PokerPlayer[] players) {
+=======
+    public Poker(Player players) {
+>>>>>>> bfc89ff9c933edd992bc00d9f83fdd17f08c4349
         super(players, 1);
         turns = new ArrayList<>();
     }

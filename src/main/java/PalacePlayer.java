@@ -1,4 +1,4 @@
-public class PalacePlayer implements Dealer{
+public  class PalacePlayer implements Dealer{
 
     Hand hand;
 

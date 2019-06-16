@@ -4,7 +4,7 @@ abstract class CardGame extends Game{
 
     private Decks decks;
 
-    public CardGame(Player[] players, Integer numberOfDecks) {
+    public CardGame(Player players, Integer numberOfDecks) {
         super(players);
         this.decks = new Decks(numberOfDecks);
 
