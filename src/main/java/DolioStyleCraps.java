@@ -21,9 +21,9 @@ public class DolioStyleCraps extends DiceGame {
        }
 
     public void endOfGame() {
-        if(didWin((DStyleCrapsPlayer)players[0])==true)
+        if(didWin((DStyleCrapsPlayer) players[0]))
             System.out.println("Player "+players[0]+" won the game");
-        else if(didWin((DStyleCrapsPlayer)players[0])==false)
+        else if(!didWin((DStyleCrapsPlayer) players[0]))
             System.out.println("Player "+players[0]+" lost the game");
         else
             playGame();
