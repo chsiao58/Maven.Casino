@@ -92,4 +92,7 @@ public class CeeLo extends DiceGame {
 
      return null;
    }
+
+   public Double getPool() {
+   }
 }

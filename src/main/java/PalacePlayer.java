@@ -18,11 +18,6 @@ public class PalacePlayer implements Dealer{
     }
 
     @Override
-
-        return null;
-    }
-
-    @Override
     public void shuffle() {
 
     }
