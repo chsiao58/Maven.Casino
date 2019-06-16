@@ -1,10 +1,17 @@
 public class CeeLo extends DiceGame {
 
-   private Integer numToBeat = 0;
+   private Integer numToBeat = -1;
    private Integer pool;
+   private Integer currentRoll;
+   private  Integer opponentsRoll = -1;
+   private Integer betAmount;
+
+   public CeeLo(Player player) {
+      super(player, 3);
+   }
 
    public CeeLo(CeeLoPlayer[] players) {
-      super(players, 1);
+      super(players, 3);
    }
 
    public void takeTurn( ){
@@ -14,13 +21,13 @@ public class CeeLo extends DiceGame {
 
 
 
-   public Integer getNumToBeat() {
+   public Integer getNumberToBeat(Integer[] dice) {
+
+
       return numToBeat;
    }
 
    public void setNumToBeat(Integer numToBeat) {
-
-
       this.numToBeat = numToBeat;
    }
 
@@ -37,7 +44,8 @@ public class CeeLo extends DiceGame {
          else if(dice[1] == dice[2]){
             currentRoll = dice[0];
          }
-         currentRoll = -1;
+         else
+            currentRoll = -1;
 
        return currentRoll;
    }
@@ -47,22 +55,36 @@ public class CeeLo extends DiceGame {
    }
 
    void playGame() {
+      while( numToBeat == -1){
+         dice.tossAndSum();
+         numToBeat = getCurrentRoll(dice.getDice());
+      }
+      while( opponentsRoll == -1){
+         dice.tossAndSum();
+         opponentsRoll = getCurrentRoll(dice.getDice());
+      }
+      if( opponentsRoll < numToBeat){
+
+      }
+
+
+
+
 
    }
 
-   Boolean endOfGame() {
-
-      return null;
+   void endOfGame() {
    }
 
    public Boolean checkDouble(Integer[] dice) {
+
+
 
       return null;
    }
 
    public Boolean checkTriple(Integer[] dice) {
-
-      return null;
+      return false;
    }
 
    public Boolean checkWinNumToBeat() {

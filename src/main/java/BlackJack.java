@@ -32,8 +32,6 @@ Integer sumHand = 0;
     public Boolean didWin(Player player) {return false;}
 
     public void playGame() {}
-    public Boolean endOfGame() {
-        return null;
-    }
+    public void endOfGame() { }
 
 }

@@ -3,13 +3,8 @@ import java.util.ArrayList;
 public class PokerPlayer extends Player implements Gambling {
     private Hand hand = new PokerHand();
     private Boolean folded = false;
-<<<<<<< HEAD
-=======
-
-
-
     private Integer chips;
->>>>>>> 8e61c5f62b0f715ab55530f1341a4d94f375bb19
+
 
     public PokerPlayer(Person p) {
         super(p);
@@ -58,8 +53,4 @@ public class PokerPlayer extends Player implements Gambling {
         chips -= numOfChipsToBet;
         return numOfChipsToBet;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 8e61c5f62b0f715ab55530f1341a4d94f375bb19
 }
