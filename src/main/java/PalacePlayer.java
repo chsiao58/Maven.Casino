@@ -7,22 +7,12 @@ public  class PalacePlayer implements Dealer{
         this.hand = new PalaceHand();
     }
 
+
     @Override
-    public Hand dealRound(Integer numberOfCards, Boolean faceDown) {
+    public Card dealCard() {
         return null;
     }
 
-    @Override
-    public Hand dealHand(Integer numberOfC) {
-        return null;
-    }
-
-    @Override
-
-        return null;
-    }
-
-    @Override
     public void shuffle() {
 
     }

@@ -21,16 +21,14 @@ public class CeeLo extends DiceGame {
 
 
    public Integer getNumberToBeat(Integer[] dice) {
-
-
       return numToBeat;
-
+   }
    public CeeLo(CeeLoPlayer players) {
          super(players, 3);
 
       }
 
-      public void setNumToBeat(Integer numToBeat){
+      public void setNumToBeat (Integer numToBeat){
          this.numToBeat = numToBeat;
       }
 
@@ -89,4 +87,3 @@ public class CeeLo extends DiceGame {
          return null;
       }
    }
-}
