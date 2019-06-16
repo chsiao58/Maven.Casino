@@ -50,8 +50,14 @@ public class House implements Dealer {
     }
 
     @Override
-    public Card dealCard() {
-        return decks.getCards().remove(0);
+    public Hand dealHand(Integer numberOfC) {
+        return null;
+    }
+
+    @Override
+    public Card dealCard(Integer numberOfCards) {
+        return null;
+
     }
 
     @Override

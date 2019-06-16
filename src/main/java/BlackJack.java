@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 
 public class BlackJack extends CardGame {
@@ -33,6 +32,6 @@ Integer sumHand = 0;
     public Boolean didWin(Player player) {return false;}
 
     public void playGame() {}
-    public void endOfGame() {}
+    public void endOfGame() { }
 
 }

@@ -6,6 +6,7 @@ public class PokerPlayer extends Player implements Gambling {
     private Boolean folded = false;
     private Integer chips;
 
+
     public PokerPlayer(Person p) {
         super(p);
     }

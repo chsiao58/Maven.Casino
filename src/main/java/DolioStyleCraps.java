@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class DolioStyleCraps extends DiceGame {
     public DolioStyleCraps(DStyleCrapsPlayer[] players) {
        super(players, 2);
@@ -9,6 +7,7 @@ public class DolioStyleCraps extends DiceGame {
     public void playGame() {
         ((DStyleCrapsPlayer) players[0]).roll(dice);
     }
+
 
     public Boolean didWin(DStyleCrapsPlayer player) {
        if(dice.sum()==7||dice.sum()==11)
@@ -27,5 +26,6 @@ public class DolioStyleCraps extends DiceGame {
             System.out.println("Player "+players[0]+" lost the game");
         else
             playGame();
+
     }
 }
