@@ -13,6 +13,10 @@ public class PokerPlayerTest {
 
     @Before
     public void setUp() throws Exception {
+<<<<<<< HEAD
+        PokerPlayer player = new PokerPlayer(new Person(100.0,"John", 21));
+=======
+>>>>>>> c95270915944ede403d6fb571f6ae0a8d4b072f9
         player = new PokerPlayer(new Person(100.0,"John", 21));
         player.setChips(100);
         originalChips = player.getChip();
