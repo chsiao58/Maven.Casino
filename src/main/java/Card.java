@@ -4,8 +4,8 @@ public class Card {
     private Rank rank;
     private Suit suit;
 
-    public Card(Integer faceDown, Rank rank, Suit suit) {
-        this.faceUp = faceDown;
+    public Card(Integer faceUp, Rank rank, Suit suit) {
+        this.faceUp = faceUp;
         this.rank = rank;
         this.suit = suit;
     }
@@ -29,17 +29,25 @@ public class Card {
         return (faceUp == 1);
     }
 
-    public Integer getRank() {
+    public Integer getRankNumber() {
         return rank.getRankNumber();
     }
+    public Rank getRank() {return rank;}
 
     public Suit getSuit() {
         return suit;
     }
 
-    public Integer getValue() {return 0;}
+    public Integer getValue() {
+        if (isFaceDownToEveryone() | isFaceUpToMe()) return 0;
+        return getRankNumber();
+    }
 
 
-    public void flip() {}
+    public void flip() {
+        if (isFaceDownToEveryone()) setFaceUpToEveryone();
+        else if (isFaceUpToEveryone()) setFaceDownToEveryone();
+        else if (isFaceUpToMe()) setFaceUpToEveryone();
+    }
 
 }

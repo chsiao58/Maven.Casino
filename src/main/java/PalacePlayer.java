@@ -18,7 +18,7 @@ public class PalacePlayer implements Dealer{
     }
 
     @Override
-    public Card dealCard(Integer numberOfCards) {
+
         return null;
     }
 

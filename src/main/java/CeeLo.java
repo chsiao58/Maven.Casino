@@ -10,8 +10,8 @@ public class CeeLo extends DiceGame {
       super(player, 3);
    }
 
-   public CeeLo(CeeLoPlayer[] players) {
-      super(players, 3);
+   public CeeLo(CeeLoPlayer ...player) {
+      super(player, 3);
    }
 
    public void takeTurn( ){
