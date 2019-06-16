@@ -35,10 +35,10 @@ public class DolioStyleCraps extends DiceGame {
         boolean keepRolling=true;
         while(keepRolling) {
             if(dice.sum()==7||dice.sum()==11){
-                System.out.println("Player won the game");
+                System.out.println("Player won the game! Congratulations...");
                 keepRolling=false;}
             else if(dice.sum()==2||dice.sum()==12||dice.sum()==3){
-                System.out.println("Player lost the game");
+                System.out.println("Player lost the game,GoodLuck next time...");
                 keepRolling=false;}
             else if(pointList.contains(dice.sum())){
                 System.out.println("Player won the game rolled "+dice.sum());
