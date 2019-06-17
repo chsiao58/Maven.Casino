@@ -75,4 +75,6 @@ public class PokerPlayer extends Player implements Gambling {
         else if (choice == 3) {fold(); return null;}
         }
     }
+
+    public PokerHand getHand() {return hand;}
 }

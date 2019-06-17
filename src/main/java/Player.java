@@ -1,5 +1,5 @@
 public abstract class Player {
-    private Person person;
+    protected Person person;
 
     public Player(Person p) {
         person = p;
