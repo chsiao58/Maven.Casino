@@ -7,7 +7,7 @@ public class PrasanthiCard {
         return "+-----+\n" + "||\n" +
                 "|  ~  |\n" + "|  P  |\n" +
                 "+-----+";
-        //24c5
+
     }
 
     public static String drawCard(Rank rank, Suit suit) {
@@ -17,31 +17,25 @@ public class PrasanthiCard {
     }
 
     private static String drawFirstCardRow() {
-        return "  +------+  ";
+        return "    ";
     }
     private static String drawRankCardRow(String rankImage) {
-        return String.format("  |  %s  |  ", rankImage);
+        return String.format("  | %s  |  ", rankImage);
     }
     private static String drawSuitCardRow(String suitImage) {
-        return String.format("  |  %2s |  ", suitImage);
+        return String.format("  | %s  |  ", suitImage);
     }
 
     public static void drawAllCards() {
         for(Rank rank : Rank.values()) System.out.print(drawFirstCardRow());
         System.out.println();
-        for(Rank rank : Rank.values()) System.out.print(drawRankCardRow(rank.getRankImage()));
+        for(Rank rank : Rank.values()) System.out.print(drawRankCardRow(rank.getRankString()));
         System.out.println();
-        for(Rank rank : Rank.values()) System.out.print(drawSuitCardRow(Suit.HEART.getSuitImage()));
+        for(Rank rank : Rank.values()) System.out.print(drawSuitCardRow(Suit.HEART.getSuitString()));
         System.out.println();
-        for(Rank rank : Rank.values()) System.out.print(drawRankCardRow(rank.getRankImage()));
+        for(Rank rank : Rank.values()) System.out.print(drawRankCardRow(rank.getRankString()));
         System.out.println();
         for(Rank rank : Rank.values()) System.out.print(drawFirstCardRow());
-
-//        System.out.println(drawBack());
    }
-//
-//
-//
-//            System.out.println(drawFirstCardRow());
 
 }

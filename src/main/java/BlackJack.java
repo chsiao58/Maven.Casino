@@ -80,7 +80,6 @@ public class BlackJack extends CardGame {
 
 
     }public Boolean canSplit() {
-        ArrayList<Card> playerHand = new ArrayList<>(5);
         if (playerHand.get(0) == playerHand.get(1)) {
             System.out.println("Would you like to split?");
             return true;
