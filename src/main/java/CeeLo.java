@@ -65,7 +65,7 @@ public class CeeLo extends DiceGame {
          player.getPerson().setWallet(playerWallet - bet);
          console.println("Another player joins the game and bets 50 bucks.");
          pool += 50;
-         console.println(String.format("The total pool is : %f", pool));
+         console.println(String.format("The total pool is : %.2f", pool));
       }
       return  true;
    }
