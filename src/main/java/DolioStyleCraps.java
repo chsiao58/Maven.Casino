@@ -11,10 +11,11 @@ public class DolioStyleCraps extends DiceGame {
         pointList = new ArrayList<>();
     }
 
-    public DolioStyleCraps(DStyleCrapsPlayer player, Integer numberOfDice) {
-        super(player, numberOfDice);
+    public DolioStyleCraps(DStyleCrapsPlayer player) {
+        super(player, 2);
         pointList = new ArrayList<>();
     }
+
 
     public void playGame() {
 

@@ -17,18 +17,11 @@ public class BlackJackTest {
         playerHand.add(1,card2);
     }
 
-//    @After
-//    public void tearDown() throws Exception {
-//        playerHand = null;
-//        assertNull(playerHand);
-//    }
 
     @Test
-    public Boolean canSplit(){
-        playerHand.get(0) != playerHand.get(1);
-        return false;
+    public void canSplitTest(){
 
-          }
+    }
 
 
 

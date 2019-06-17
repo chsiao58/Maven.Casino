@@ -111,13 +111,13 @@ public class Mediator {
         Integer payOutRatio=2;
         Integer betchips=0;
         House house=new House(payOutRatio);
-        DStyleCrapsPlayer player=new DStyleCrapsPlayer(person,house.moneyToChips(person.getWallet()));
+        DStyleCrapsPlayer player=new DStyleCrapsPlayer(person);
         betchips=house.moneyToChips(person.getWallet());
         DolioStyleCraps craps=new DolioStyleCraps(player);
 
         craps.playGame();
         craps.endOfGame();
-        if (craps.didWin(player)) {
+        if (craps.didWin()) {
             System.out.println("You won " + house.payout(betchips) + " Chips");
         }
     }

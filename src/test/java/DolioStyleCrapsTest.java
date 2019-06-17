@@ -11,9 +11,9 @@ public class DolioStyleCrapsTest {
         DolioStyleCraps dCraps = new DolioStyleCraps(player);
         dCraps.playGame();
         System.out.println(dCraps.getDice().sum());
-        System.out.println(dCraps.didWin(player[0]));
+        System.out.println(dCraps.didWin());
         if (dCraps.getDice().sum() == 2) {
-            Assert.assertFalse(dCraps.didWin(player[0]));
+            Assert.assertFalse(dCraps.didWin());
         }
     }
 
@@ -24,7 +24,7 @@ public class DolioStyleCrapsTest {
         DolioStyleCraps dCraps = new DolioStyleCraps(player);
         dCraps.playGame();
         if (dCraps.getDice().sum() != 11 || dCraps.getDice().sum() != 7||dCraps.getDice().sum() == 2) {
-            Assert.assertFalse(dCraps.didWin(player[0]));
+            Assert.assertFalse(dCraps.didWin());
         }
     }
     @Test
@@ -33,7 +33,7 @@ public class DolioStyleCrapsTest {
         DolioStyleCraps dCraps = new DolioStyleCraps(player);
         dCraps.playGame();
         if (dCraps.getDice().sum() == 11 || dCraps.getDice().sum() == 7) {
-            Assert.assertTrue(dCraps.didWin(player[0]));
+            Assert.assertTrue(dCraps.didWin());
         }
     }
         @Test
@@ -54,9 +54,9 @@ public class DolioStyleCrapsTest {
         dCraps.playGame();
         int j = dCraps.getDice().sum();
         if (j == 2) {
-           dCraps.didWin(player[0]);
+           dCraps.didWin();
         }
-        Assert.assertEquals(false, dCraps.didWin(player[0]));
+        Assert.assertEquals(false, dCraps.didWin());
     }
 
 }
