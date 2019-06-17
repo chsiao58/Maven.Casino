@@ -14,17 +14,12 @@ public class PokerHandTest {
 
     @Test
     public void pokerHandSizeTest() {
-//        PokerHand pokerHand = new PokerHand();
+        ArrayList<Card> cards = new ArrayList<>();
+        cards.add(new Card(1,Rank.SEVEN,Suit.DIAMOND));
+        cards.add(new Card(1,Rank.ACE,Suit.SPADE));
+
+        PokerHand pokerHand = new PokerHand(cards);
         Assert.assertEquals(2, (int) pokerHand.numberOfCardsInHand());
-
-    }
-
-    @Test
-    public void pokerUniqueTest() {
-        // assuming only 1 deck
-
- //       PokerHand pokerHand = new PokerHand();
- //       Assert.assertNotEquals(pokerHand.getCards().get(0),pokerHand.getCards().get(1));
 
     }
 }
