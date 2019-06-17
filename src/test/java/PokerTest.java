@@ -35,6 +35,13 @@ public class PokerTest {
     }
 
     @Test
+    public void dealCardUniqueTest() {
+        game.dealCardToAllPlayer();
+        for (PokerPlayer p: game.getPokerPlayerList())
+            Assert.assertNotEquals(p.getHand().getCards().get(0),p.getHand().getCards().get(1));
+    }
+
+    @Test
     public void showDownTimeTest() {
         game.flop();
         Assert.assertFalse(game.showDownTime());
