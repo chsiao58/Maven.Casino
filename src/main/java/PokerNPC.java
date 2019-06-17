@@ -6,6 +6,6 @@ public class PokerNPC extends PokerPlayer{
 
     @Override
     public Integer getBetFromAction(Console console, Integer lastBet) {
-        return 0;
+        return call(lastBet);
     }
 }

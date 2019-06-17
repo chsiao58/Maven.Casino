@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class Poker extends CardGame {
 
@@ -15,14 +14,19 @@ public class Poker extends CardGame {
     public Poker(PokerPlayer player, Console console) {
         super(player, 1);
         this.console = console;
+        house = new House(5,decks);
         pokerPlayerList = new ArrayList<>();
-        /* TODO: after the changes of Players array to Single player, store the
-         * TODO: player to list and make some poker AI into the list
-         * */
+        pokerPlayerList.add(player);
+        for (Integer index = 1; index < 4; index++)
+            pokerPlayerList.add(new PokerNPC(new Person(300.0, "Computer", 21)));
 
+        //----- for debugging
+        for (PokerPlayer p: pokerPlayerList)
+            p.addChips(500);
     }
 
     public void playGame() {
+        house.shuffle();
         while (!onePlayerStanding() && !showDownTime()) {
             initializeBet();
             determineTurnToPlay();
@@ -42,26 +46,41 @@ public class Poker extends CardGame {
     private void preFlop() {
         update(pokerPlayerList.get(0).smallBlind());
         update(pokerPlayerList.get(1).bigBlind());
-        // dealtCard
+        dealCardToAllPlayer();
         startBetting(2);
-        // flop
+        flop();
+    }
+
+    private void flop() {
+        for (int i = 0; i < 3; i++)
+            communityCard.add(house.dealCard());
+    }
+
+    private void dealCardToAllPlayer() {
+        for (PokerPlayer player : pokerPlayerList){
+            ArrayList<Card> twoCard = new ArrayList<>();
+            twoCard.add(house.dealCard());
+            twoCard.add(house.dealCard());
+            player.setHand(twoCard);
+        }
     }
 
 
     private void postFlop() {
+        console.println(communityCard.toString());
         startBetting(0);
-        // if is not showDown time, add card
+        communityCard.add(house.dealCard());
     }
 
     private PokerPlayer showDown() {
         // make an array of everyone's point
         // for each player
         // determine the point they got by add communityCard + player hand
-        // send it to evalulate
+        // send it to evaluate
         // return winner
 
 
-        return null;
+        return pokerPlayerList.get(0);
     }
 
     private Boolean showDownTime() {
@@ -149,7 +168,11 @@ public class Poker extends CardGame {
         // reset bet
         // change seat
         // call playGame
-    }
 
-    public void resetLastBet() {lastBet = 0;}
+        String input = console.getStringInput("Keep Playing? Y/N");
+        if (input.equalsIgnoreCase("y"))
+            playGame();
+        else
+            console.println("you have "+ pokerPlayerList.get(0).getChip() + " chips in total.");
+    }
 }

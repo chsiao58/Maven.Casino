@@ -1,6 +1,8 @@
 import exceptions.NegativeBetException;
 import exceptions.NotEnoughChipException;
 
+import java.util.ArrayList;
+
 public class PokerPlayer extends Player implements Gambling {
     private PokerHand hand;
     private Boolean folded = false;
@@ -8,6 +10,10 @@ public class PokerPlayer extends Player implements Gambling {
 
     public PokerPlayer(Person p) {
         super(p);
+    }
+
+    public void setHand(ArrayList<Card> cards) {
+        hand = new PokerHand(cards);
     }
 
     public Integer call(Integer lastPlayerBet) {
