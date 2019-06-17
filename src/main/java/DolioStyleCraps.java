@@ -11,8 +11,8 @@ public class DolioStyleCraps extends DiceGame {
         pointList = new ArrayList<>();
     }
 
-    public DolioStyleCraps(Player players, Integer numberOfDice) {
-        super(players, numberOfDice);
+    public DolioStyleCraps(DStyleCrapsPlayer player, Integer numberOfDice) {
+        super(player, numberOfDice);
         pointList = new ArrayList<>();
     }
 
@@ -22,7 +22,7 @@ public class DolioStyleCraps extends DiceGame {
         System.out.println("Player rolled "+dice.tossAndSum());
     }
 
-    public Boolean didWin(DStyleCrapsPlayer player) {
+    public Boolean didWin() {
        if(dice.sum()==7||dice.sum()==11)
            return true;
        else if(dice.sum()==2)
@@ -34,10 +34,10 @@ public class DolioStyleCraps extends DiceGame {
 
     public void endOfGame() {
 
-        if(didWin((DStyleCrapsPlayer) players[0]))
-            System.out.println("Player "+players[0]+" won the game");
-        else if(!didWin((DStyleCrapsPlayer) players[0]))
-            System.out.println("Player "+players[0]+" lost the game");
+        if(didWin())
+            System.out.println("Player "+player+" won the game");
+        else if(!didWin())
+            System.out.println("Player "+player+" lost the game");
         else
             playGame();
 
