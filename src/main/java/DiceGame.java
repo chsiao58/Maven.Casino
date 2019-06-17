@@ -10,6 +10,11 @@ public abstract class DiceGame extends Game {
 
     }
 
+    public DiceGame(Player players, Integer numberOfDice) {
+        super(players);
+        dice = new Dice(numberOfDice);
+    }
+
     public Dice getDice() {
         return dice;
     }

@@ -1,31 +1,25 @@
 import java.util.ArrayList;
 
 public class DolioStyleCraps extends DiceGame {
-<<<<<<< HEAD
+
+
+    private ArrayList<Integer> pointList;
+
+
     public DolioStyleCraps(DStyleCrapsPlayer[] players) {
-       super(players, 2);
-=======
-    public DolioStyleCraps(Player players, Integer numberOfDice) {
-        super(players, numberOfDice);
+        super(players, 2);
+        pointList = new ArrayList<>();
     }
 
-
-
-
-    ArrayList<Integer> pointList=new ArrayList<>();
-    public DolioStyleCraps(DStyleCrapsPlayer players) {
-        super(players, 2);
->>>>>>> ada73ca9ac4742d37a82da0884bebf26e8ff6d52
-   }
-
+    public DolioStyleCraps(Player players, Integer numberOfDice) {
+        super(players, numberOfDice);
+        pointList = new ArrayList<>();
+    }
 
     public void playGame() {
-<<<<<<< HEAD
-        ((DStyleCrapsPlayer) players[0]).roll(dice);
-=======
+
        super.getDice().toss();
         System.out.println("Player rolled "+dice.tossAndSum());
->>>>>>> ada73ca9ac4742d37a82da0884bebf26e8ff6d52
     }
 
     public Boolean didWin(DStyleCrapsPlayer player) {
@@ -39,14 +33,6 @@ public class DolioStyleCraps extends DiceGame {
        }
 
     public void endOfGame() {
-<<<<<<< HEAD
-        if(didWin((DStyleCrapsPlayer)players[0])==true)
-            System.out.println("Player "+players[0]+" won the game");
-        else if(didWin((DStyleCrapsPlayer)players[0])==false)
-            System.out.println("Player "+players[0]+" lost the game");
-        else
-            playGame();
-=======
 
         if(didWin((DStyleCrapsPlayer) players[0]))
             System.out.println("Player "+players[0]+" won the game");
@@ -76,7 +62,6 @@ public class DolioStyleCraps extends DiceGame {
                 playGame();}
         }
 
->>>>>>> ada73ca9ac4742d37a82da0884bebf26e8ff6d52
     }
-    }
+}
 
