@@ -25,18 +25,13 @@ public class BlackJackTest {
 
     @Test
     public Boolean canSplit(){
+        playerHand.get(0) != playerHand.get(1);
         return false;
 
           }
 
-    @Test
-    public void name() {
 
-    }
 
-    @Test
-    public void playGame() {
-    }
 
     @Test
     public void endOfGame() {

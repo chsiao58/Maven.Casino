@@ -1,5 +1,10 @@
 public class Chips {
+
     private Integer chips;
+
+    public Chips(Integer chips) {
+        this.chips = chips;
+    }
 
     public Integer getChips() {
         return chips;

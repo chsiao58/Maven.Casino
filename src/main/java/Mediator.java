@@ -44,13 +44,13 @@ public class Mediator {
 
 
 
-    private void playCraps(Double wallet, Person person) {
+    private void playCraps(){//Double wallet, Person person) 
 
         Integer payOutRatio=2;
         Integer betchips=0;
         House house=new House(payOutRatio);
-        DStyleCrapsPlayer player=new DStyleCrapsPlayer(person,house.moneyToChips(wallet));
-        betchips=house.moneyToChips(wallet);
+        DStyleCrapsPlayer player=new DStyleCrapsPlayer(person,house.moneyToChips(person.getWallet()));
+        betchips=house.moneyToChips(person.getWallet());
         DolioStyleCraps craps=new DolioStyleCraps(player);
 
         craps.playGame();

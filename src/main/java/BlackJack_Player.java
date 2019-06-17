@@ -6,6 +6,8 @@ public class BlackJack_Player extends Player implements Gambling {
 
 
     Integer bet;
+    Integer sumHand = 0;
+
 
 
     public BlackJack_Player(Person player) {
@@ -20,26 +22,8 @@ public class BlackJack_Player extends Player implements Gambling {
     }
 
 
-    public Boolean canSplit() {
-        ArrayList<Card> playerHand = new ArrayList<>(5);
-        if (playerHand.get(0) == playerHand.get(1)) {
-            System.out.println("Would you like to split?");
-            return true;
+     public Integer bet (Integer numOfChipsToBet) throws NegativeBetException {
+
+            return 0;
         }
-        return false;
     }
-//    public void split() {
-//        if (chipCount >= 2){
-//            bet();
-//        }
-//}
-    public void hitOrStay() {}
-    public void doubleDown() {}
-    public void leaveGame(){}
-
-
-    @Override
-    public Integer bet(Integer numOfChipsToBet) throws NegativeBetException {
-        return null;
-    }
-}

@@ -4,6 +4,11 @@ public class DStyleCrapsPlayer extends Player{
     Integer betchips;
 
 
+//        House house=new House(2, null);
+//        chips=house.moneyToChips(20.0);
+
+
+
     public  DStyleCrapsPlayer(Person player,Integer chips){
         this.person=player;
         this.chips=chips;
@@ -15,12 +20,12 @@ public class DStyleCrapsPlayer extends Player{
         return total;
     }
 
-//    public Integer numOfChips(){
-//        if (person.getWallet()==0)
-//            return null;
-//     // return chips;
-//
-//    }
+    public Integer numOfChips(){
+        if (person.getWallet()==0)
+            return null;
+      return chips;
+
+    }
 
     public Integer bet(Integer betChips){
         this.betchips = betChips;
