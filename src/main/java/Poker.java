@@ -27,6 +27,7 @@ public class Poker extends CardGame {
 
     public void playGame() {
         house.shuffle();
+        communityCard = new ArrayList<>();
         while (!onePlayerStanding() && !showDownTime()) {
             initializeBet();
             determineTurnToPlay();
