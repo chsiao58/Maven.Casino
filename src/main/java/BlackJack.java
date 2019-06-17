@@ -1,33 +1,25 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> ada73ca9ac4742d37a82da0884bebf26e8ff6d52
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class BlackJack extends CardGame {
-ArrayList<Card> playerHand = new ArrayList<>(5);
-ArrayList<Card> houseHand = new ArrayList<>(5);
+    ArrayList<Card> playerHand;
+    ArrayList<Card> houseHand;
+    private Decks blackJackDeck;
+    private Integer chipCount;
+    private House house;
+    private Scanner input;
 
     public BlackJack(BlackJack_Player players, Integer numberOfDecks) {
         super(players, numberOfDecks);
+        this.playerHand = new ArrayList<>(5);
+        this.houseHand = new ArrayList<>(5);
+        this.blackJackDeck = new Decks(5);
+        this.chipCount = 0;
+        this.house = new House(2, blackJackDeck);
+        this.input = new Scanner(System.in);
     }
-
-<<<<<<< HEAD
-
-
-=======
-
-    private Decks blackJackDeck = new Decks(5);
-    private House house = new House(2, blackJackDeck);
-    private ArrayList<Card> playersHand = new ArrayList<>(5);
-    private ArrayList<Card> houseHand = new ArrayList<>(5);
-    private Hand playerHand;
-    private Hand dealerHand;
-    private Hand split;
-    Integer chipCount = 0;
-    private Scanner input = new Scanner(System.in);
 
 
     public void playGame() {
@@ -54,7 +46,7 @@ ArrayList<Card> houseHand = new ArrayList<>(5);
 
 
             house.dealCard(1).isFaceUpToEveryone();
-            dealerHand
+            dealerHand.addCard();
             checkWin();
             input.nextInt(Integer.parseInt("Would you like to Hit?"));
 
@@ -120,6 +112,6 @@ ArrayList<Card> houseHand = new ArrayList<>(5);
 //
 //            return 0;
 //        }
->>>>>>> ada73ca9ac4742d37a82da0884bebf26e8ff6d52
+
 
     }
