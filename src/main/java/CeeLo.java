@@ -17,11 +17,12 @@ public class CeeLo extends DiceGame {
       return null;
    }
 
-   void playGame() {
+   protected void playGame() {
+
 
    }
 
-   void endOfGame() {
+   protected void endOfGame() {
 
    }
 

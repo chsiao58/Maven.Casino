@@ -17,7 +17,6 @@ public class DolioStyleCrapsTest {
         }
     }
 
-
     @Test
        public void didWin1() {
         DStyleCrapsPlayer[] player = {new DStyleCrapsPlayer(new Person(500.00, "Jon", 25))};

@@ -107,19 +107,23 @@ public class Mediator {
 
     private void playCraps(){
         //Double wallet, Person person)
-
-        Integer payOutRatio=2;
-        Integer betchips=0;
-        House house=new House(payOutRatio);
-        DStyleCrapsPlayer player=new DStyleCrapsPlayer(person);
-        betchips=house.moneyToChips(person.getWallet());
-        DolioStyleCraps craps=new DolioStyleCraps(player);
-
-        craps.playGame();
-        craps.endOfGame();
-        if (craps.didWin()) {
-            System.out.println("You won " + house.payout(betchips) + " Chips");
+        if (isUnderage()) {
+            printUnderageWarning();
+        } else {
+            Integer payOutRatio=2;
+            Integer betchips=0;
+            House house=new House(payOutRatio);
+            DStyleCrapsPlayer player=new DStyleCrapsPlayer(person);
+            betchips=house.moneyToChips(person.getWallet());
+            DolioStyleCraps craps = new DolioStyleCraps(player);
+            craps.playGame();
+            craps.endOfGame();
+            if (craps.didWin()) {
+                System.out.println("You won " + house.payout(betchips) + " Chips");
+            }
         }
+
+
     }
 
 

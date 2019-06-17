@@ -26,4 +26,8 @@ public class DStyleCrapsPlayer extends Player{
     }
 
 
+    @Override
+    public String toString() {
+        return person.getName();
+    }
 }

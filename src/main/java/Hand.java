@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public abstract class Hand {
-    private  ArrayList<Card> cards;
+    public ArrayList<Card> cards;
     private Integer sumHand;
 
     public Hand(ArrayList<Card> cards) {
@@ -32,14 +32,5 @@ public abstract class Hand {
         return cards.size();
     }
 
-    public Integer sumHand(){
-        for (int i = 0; i < 5; i++) {
-            if(cards.get(i).getRankNumber() != null){
 
-                sumHand  += cards.get(i).getRankNumber();
-            }
-
-        }return sumHand;
-
-    }
 }
