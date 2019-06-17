@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class PalacePlayer implements Dealer{
 
     Hand hand;
@@ -5,6 +7,7 @@ public class PalacePlayer implements Dealer{
     public PalacePlayer(Person player) {
 
  //       this.hand = new PalaceHand();
+
     }
 
 

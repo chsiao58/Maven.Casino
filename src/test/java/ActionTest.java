@@ -4,15 +4,15 @@ import static org.junit.Assert.*;
 
 public class ActionTest {
 
-    @Test
-    public void lookupTest() {
-        //Given
-        String input = "end";
-        Action action = new Action(input);
-        String expected = "quit";
-        String actual = action.toActionString();
-        assertEquals(expected, actual);
-    }
+//    @Test
+//    public void lookupTest() {
+//        //Given
+//        String input = "end";
+//        Action action = new Action(input);
+//        String expected = "quit";
+//        String actual = action.toActionString();
+//        assertEquals(expected, actual);
+//    }
 
     @Test
     public void getActTest() {
@@ -25,10 +25,10 @@ public class ActionTest {
 
     @Test
     public void normalizeInput() {
-        String input = "QuIT";
+        String input = "QuIT   ";
         Action action = new Action(input);
         String expected = "quit";
-        String actual = action.normalizeInput();
+        String actual = action.getInput();
         assertEquals(expected, actual);
     }
 
