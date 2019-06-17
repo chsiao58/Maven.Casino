@@ -9,7 +9,6 @@ public abstract class Game {
     public Game(Player[] players) {
         this.players = players;
     }
-    public Game(){}
 
     public Game(Player player) {
         this.player = player;
@@ -17,7 +16,6 @@ public abstract class Game {
 
     //  abstract Boolean didWin(Player player);
     abstract void playGame();
+
     abstract void endOfGame();
-
-
 }

@@ -13,7 +13,9 @@ public class Card {
     public void setFaceDownToEveryone() {
         this.faceUp = -1;
     }
-    public void setFaceUpToMe() {
+
+
+    void setFaceUpToMe() {
         this.faceUp = 0;
     }
     public void setFaceUpToEveryone() {

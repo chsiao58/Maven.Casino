@@ -3,10 +3,15 @@ import java.util.Collections;
 import java.util.List;
 
 public abstract class Hand {
-    private  ArrayList<Card> cards;
+    public ArrayList<Card> cards;
+    private Integer sumHand;
 
     public Hand(ArrayList<Card> cards) {
         this.cards = cards;
+    }
+
+    public ArrayList<Card> getCards() {
+        return cards;
     }
 
     public void sort() {
@@ -29,5 +34,5 @@ public abstract class Hand {
         return cards.size();
     }
 
-    public List<Card> getCards() {return Collections.unmodifiableList(cards);}
+
 }

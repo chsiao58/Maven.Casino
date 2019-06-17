@@ -1,23 +1,12 @@
-import java.util.ArrayList;
-
-public class PalacePlayer implements Dealer{
-
-    Hand hand;
-
-    public PalacePlayer(Person player) {
-
- //       this.hand = new PalaceHand();
-
+public class PalacePlayer extends Player {
+    public PalacePlayer(Person p) {
+        super(p);
     }
 
-
-    @Override
-    public Card dealCard() {
-        return null;
+    public int getCards() {
+        return 3;
     }
 
-    @Override
-    public void shuffle() {
-
+    public void getHand() {
     }
 }

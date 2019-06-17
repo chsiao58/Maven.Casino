@@ -8,7 +8,11 @@ public class Person {
         this.name = name;
         this.age = age;
     }
-
+    public Person() {
+        this.wallet = 0.0;
+        this.name = "Will";
+        this.age = 27;
+    }
 
     public Double getWallet() {
         return wallet;

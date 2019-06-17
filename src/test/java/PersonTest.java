@@ -15,7 +15,21 @@ public class PersonTest {
         assertNotNull(p);
         Integer actualAge = p.getAge();
         assertEquals(age, actualAge);
-        Double actualWallet = 100.0;
+        Double actualWallet = p.getWallet();
+        assertEquals(wallet, actualWallet);
+        String actualName = p.getName();
+        assertEquals(name, actualName);
+    }
+    @Test
+    public void nullaryConstructorTest() {
+        Integer age = 27;
+        Double wallet = 0.0;
+        String name = "Will";
+        Person p = new Person();
+        assertNotNull(p);
+        Integer actualAge = p.getAge();
+        assertEquals(age, actualAge);
+        Double actualWallet = p.getWallet();
         assertEquals(wallet, actualWallet);
         String actualName = p.getName();
         assertEquals(name, actualName);

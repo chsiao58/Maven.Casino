@@ -11,7 +11,7 @@ public class Mediator {
         gameContinue = true;
         enterLounge();
         while (gameContinue) {
-            String input = console.getStringInput("What would you like to do?");
+            String input = console.getStringInput("What would you like to do now?");
             parseInput(input);
         }
 
@@ -27,14 +27,6 @@ public class Mediator {
     }
 
 
-    private void playCraps() {
-        if (isUnderage()) {
-            printUnderageWarning();
-        } else {
-            return;
-        }
-    }
-
     private void playBlackJack() {
         if (isUnderage()) {
             printUnderageWarning();
@@ -48,7 +40,9 @@ public class Mediator {
         if (isUnderage()) {
             printUnderageWarning();
         } else {
-            return;
+            CeeLoPlayer player = new CeeLoPlayer(person);
+            CeeLo ceelo = new CeeLo(player, console);
+            ceelo.playGame();
         }
     }
 
@@ -70,7 +64,7 @@ public class Mediator {
         Integer age = console.getIntegerInput("How old are you?");
         String name = firstLetterUppercase(console.getStringInput("What's your name?"));
         //Double wallet = (age >= 21) ? console.getDoubleInput("How much money do you want to bet today?") : 0.0;
-        Double wallet = console.getDoubleInput("How much money have you brought with you today?");
+        Double wallet = console.getDoubleInput("How much money will we manage for you today?");
         return new Person(wallet, name, age);
     }
 
@@ -99,58 +93,82 @@ public class Mediator {
         }
         console.println("You have returned to our luxurious lounge.");
     }
+
     public void getFood() {
         console.println("Welcome to Stefun's Sustainable Eatery");
-        if (person.getWallet() < 15) console.println("C'mon, how're you going to eat with that amount of money. You can have some water.");
+        if (person.getWallet() < 15)
+            console.println("C'mon, how're you going to eat with that amount of money. You can have some water.");
         else {
             String food = firstLetterUppercase(console.getStringInput("We can make just about anything. What do you want?"));
             console.println(String.format("%s, straight from the kitchen. Fifteen dollars please.", food));
-            person.setWallet(person.getWallet()-15);
+            person.setWallet(person.getWallet() - 15);
             String finished = console.getStringInput("Done eating?");
-            if (finished.equals("yes")) console.println("Sorry, we have quite the wait. I'd appreciate it if you could leave");
+            if (finished.equals("yes"))
+                console.println("Sorry, we have quite the wait. I'd appreciate it if you could leave");
             else console.println("Too bad, someone else needs your table. Here's a container for your food.");
         }
-        console.println("You have returned to the beautiful lounge.");
     }
+
+    private void playCraps(){
+        if (isUnderage()) {
+            printUnderageWarning();
+        } else {
+            Integer payOutRatio=2;
+            Integer betchips=0;
+            House house=new House(payOutRatio);
+            DStyleCrapsPlayer player=new DStyleCrapsPlayer(person);
+            betchips=house.moneyToChips(person.getWallet());
+            DolioStyleCraps craps = new DolioStyleCraps(player);
+            craps.playGame();
+            craps.endOfGame();
+            if (craps.didWin()) {
+                System.out.println("You won " + house.payout(betchips) + " Chips");
+            }
+        }
+
+
+    }
+
 
     public void parseInput(String input){
         Action action = new Action(input);
         Act act = action.getAct();
-        switch (act) {
+            switch(act){
             case QUIT:
-                leaveGame();
-                break;
+            leaveGame();
+            break;
             case PLAY:
-                printOptions();
-                break;
+            printOptions();
+            break;
             case DRINK:
-                getDrink();
-                break;
+            getDrink();
+            break;
             case EAT:
-                getFood();
-                break;
+            getFood();
+            break;
             case PALACE:
-                playPalace();
-                break;
+            playPalace();
+            break;
             case POKER:
-                playPoker();
-                break;
+            playPoker();
+            break;
             case CEELO:
-                playCeeLo();
-                break;
+            playCeeLo();
+            break;
             case BLACKJACK:
-                playBlackJack();
-                break;
+            playBlackJack();
+            break;
             case CRAPS:
-                playCraps();
-                break;
+            playCraps();
+            break;
             case LOUNGE:
-                enterLounge();
-                break;
+            enterLounge();
+            break;
             case UNKNOWN:
                 console.println("We're not sure what you meant by that. Can you be more specific?");
                 break;
         }
+
     }
 
     private void leaveGame() {
@@ -158,10 +176,11 @@ public class Mediator {
         gameContinue = false;
     }
 
-    private Boolean isUnderage() {
+    protected Boolean isUnderage() {
         if (person == null) return true;
         return (person.getAge() < 21);
     }
+
 
     private void printUnderageWarning() {
         console.println("This game is not available for those under 21.");
@@ -171,8 +190,10 @@ public class Mediator {
 
     }
     private String firstLetterUppercase(String input) {
+        if (input.isEmpty()) return "";
         char firstLetter = input.charAt(0);
         String first = String.valueOf(firstLetter).toUpperCase();
         return first + input.substring(1);
     }
+
 }

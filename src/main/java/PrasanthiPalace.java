@@ -4,9 +4,9 @@ public class PrasanthiPalace {
         // write your tests before you start fucking with this
         run();
     }
+
     public static void run() {
         Mediator mediator = new Mediator();
         mediator.enterLounge();
-
     }
 }

@@ -10,6 +10,15 @@ public abstract class DiceGame extends Game {
 
     }
 
+    public DiceGame(Player players, Integer numberOfDice) {
+        super(players);
+        dice = new Dice(numberOfDice);
+    }
+
+    public DiceGame(CeeLoPlayer player) {
+        super(player);
+    }
+
     public Dice getDice() {
         return dice;
     }

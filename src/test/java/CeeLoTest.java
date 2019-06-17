@@ -1,30 +1,27 @@
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class CeeLoTest {
 
-    @Test
-    public void takeTurn() {
-    }
+    // start game
+    // take bet
+    // end game
+    // declare winner/ payout
 
     @Test
-    public void setNumber() {
-    }
+    public void startGame(){
 
-    @Test
-    public void getNumberToBeat() {
-    }
+        CeeLo ceeLoGame  = new CeeLo();
+        Person p = new Person();
+        CeeLoPlayer player = new CeeLoPlayer(p);
+        Dice cDice = new Dice(3);
+        Double bet =  50.0;
+        ceeLoGame.startGame();
+        Double pool = ceeLoGame.getPool();
 
-    @Test
-    public void didWin() {
-    }
+        Assert.assertEquals(bet, pool);
 
-    @Test
-    public void playGame() {
-    }
-
-    @Test
-    public void endOfGame() {
     }
 }

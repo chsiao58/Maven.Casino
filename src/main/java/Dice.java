@@ -3,9 +3,9 @@ public class Dice {
     public Dice(Integer numberOfDice) {
         this.dice = new Integer[numberOfDice];
     }
+
     public Integer toss() {
     return ((int)(Math.random()*6) + 1);
-
 
     }
     public Integer tossAndSum() {

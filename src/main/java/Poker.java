@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Poker extends CardGame {
 
-    private List<Card> communityCard;
+    private ArrayList<Card> communityCard;
     private Integer pool = 0;
     private Integer lastBet = 0;
     private Integer sameBetCount = 0;
@@ -209,4 +209,5 @@ public class Poker extends CardGame {
     public House getHouse() {
         return house;
     }
+
 }

@@ -6,7 +6,6 @@ public class CardComparator implements Comparator<Card> {
     public int compare(Card cardOne, Card cardTwo) {
 
         Integer value = cardOne.getRankNumber()-cardTwo.getRankNumber();
-
         if (value == 0)
             value = cardOne.getSuit().compareTo(cardTwo.getSuit());
         return value;

@@ -1,10 +1,12 @@
+import exceptions.NegativeBetException;
+
 import java.util.ArrayList;
 
 public class BlackJack_Player extends Player implements Gambling {
 
     private Person player;
     Integer bet;
-
+    Integer sumHand = 0;
 
 
 
