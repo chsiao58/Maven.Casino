@@ -14,10 +14,11 @@ public class CeeLoTest {
     public void startGame(){
 
         CeeLo ceeLoGame  = new CeeLo();
-        Person p = new Person(50.0, "Will", 27);
+        Person p = new Person();
         CeeLoPlayer player = new CeeLoPlayer(p);
         Dice cDice = new Dice(3);
         Double bet =  50.0;
+        ceeLoGame.startGame();
         Double pool = ceeLoGame.getPool();
 
         Assert.assertEquals(bet, pool);

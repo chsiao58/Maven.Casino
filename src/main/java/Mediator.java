@@ -11,7 +11,7 @@ public class Mediator {
         gameContinue = true;
         enterLounge();
         while (gameContinue) {
-            String input = console.getStringInput("What would you like to do?");
+            String input = console.getStringInput("What would you like to do now?");
             parseInput(input);
         }
 
@@ -40,7 +40,9 @@ public class Mediator {
         if (isUnderage()) {
             printUnderageWarning();
         } else {
-            return;
+            CeeLoPlayer player = new CeeLoPlayer(person);
+            CeeLo ceelo = new CeeLo(player, console);
+            ceelo.playGame();
         }
     }
 
@@ -108,7 +110,6 @@ public class Mediator {
     }
 
     private void playCraps(){
-        //Double wallet, Person person)
         if (isUnderage()) {
             printUnderageWarning();
         } else {
@@ -161,8 +162,8 @@ public class Mediator {
             playCraps();
             break;
             case LOUNGE:
-                enterLounge();
-                break;
+            enterLounge();
+            break;
             case UNKNOWN:
                 console.println("We're not sure what you meant by that. Can you be more specific?");
                 break;
@@ -189,6 +190,7 @@ public class Mediator {
 
     }
     private String firstLetterUppercase(String input) {
+        if (input.isEmpty()) return "";
         char firstLetter = input.charAt(0);
         String first = String.valueOf(firstLetter).toUpperCase();
         return first + input.substring(1);
