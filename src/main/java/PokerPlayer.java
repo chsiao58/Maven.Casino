@@ -4,10 +4,9 @@ import exceptions.NotEnoughChipException;
 import java.util.ArrayList;
 
 public class PokerPlayer extends Player implements Gambling {
-<<<<<<< HEAD
-=======
+
     private PokerHand hand;
->>>>>>> a37167eeb59fb7db66ca95050faf9a841e418cbb
+
     private Boolean folded = false;
     private Integer chips = 0;
 
