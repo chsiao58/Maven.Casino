@@ -56,7 +56,7 @@ public class PokerHandEvaluator {
                     count++;
                     currentRankNumber++;
                 }
-                if (count >= 5)
+                if (count >= 4)
                     return true;
             }
         }
