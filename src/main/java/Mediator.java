@@ -48,7 +48,9 @@ public class Mediator {
         if (isUnderage()) {
             printUnderageWarning();
         } else {
-            return;
+            PokerPlayer you = new PokerPlayer(person);
+            Poker game = new Poker(you,console);
+            game.playGame();
         }
     }
 

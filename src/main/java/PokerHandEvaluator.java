@@ -4,13 +4,13 @@ import java.util.List;
 
 public class PokerHandEvaluator {
 
- //   STRAIGHT_FLUSH  (2), good
+ //   STRAIGHT_FLUSH  (2), X
  //   FOUR_OF_A_KIND  (3), good
- //   FULL_HOUSE      (4), good
+ //   FULL_HOUSE      (4), X
  //   FLUSH           (5), good
  //   STRAIGHT        (6), good
  //   THREE_OF_A_KIND (7), good
- //   TWO_PAIR        (8), good
+ //   TWO_PAIR        (8), X
  //   PAIR            (9), good
 
     public static Boolean isStraightFlush(ArrayList<Card> cards) { //
@@ -24,12 +24,7 @@ public class PokerHandEvaluator {
 
     public static Boolean isFullHouse(ArrayList<Card> cards) {
         // TODO: change this obviously wrong code
-//        if (isThreeOfAKind(cards)) {
-//            ArrayList<Card> remaining = cardsExclude3Kind(cards);
-//            if (isPair(remaining))
-//                return true;
-//        }
-        return false;
+        return isThreeOfAKind(cards) && isPair(cards);
     }
 
 

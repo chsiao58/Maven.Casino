@@ -6,6 +6,8 @@ public class PokerNPC extends PokerPlayer{
 
     @Override
     public Integer getBetFromAction(Console console, Integer lastBet) {
+        Integer valueBet = call(lastBet);
+        console.println(person.getName() + " called");
         return call(lastBet);
     }
 }
