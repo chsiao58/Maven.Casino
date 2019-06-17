@@ -3,6 +3,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class PokerHandTest {
@@ -10,24 +12,28 @@ public class PokerHandTest {
     @Before
     public void setUp()
     {
-        pokerHand = new PokerHand();
+        ArrayList<Card> cards = new ArrayList<>();
+        pokerHand = new PokerHand(cards);
     }
     @Test
     public void pokerHandSizeTest() {
-        PokerHand pokerHand = new PokerHand();
+        ArrayList<Card> cards = new ArrayList<>();
+        PokerHand pokerHand = new PokerHand(cards);
     //    Assert.assertEquals(2, pokerHand.numOfCardInHand());
     }
 
     @Test
     public void pokerHandSize2Test() {
-        PokerHand pokerHand = new PokerHand();
+        ArrayList<Card> cards = new ArrayList<>();
+        PokerHand pokerHand = new PokerHand(cards);
    //     Assert.assertEquals(2, pokerHand.numOfCardInHand());
     }
 
     @Test
     public void pokerUniqueTest() {
         // assuming only 1 deck
-        PokerHand pokerHand = new PokerHand();
+        ArrayList<Card> cards = new ArrayList<>();
+        PokerHand pokerHand = new PokerHand(cards);
     //    Assert.assertnotEquals(pokerHand.getCards().get(0),pokerHand.getCards().get(1));
     }
 }

@@ -1,10 +1,12 @@
+import java.util.ArrayList;
+
 public class PalacePlayer implements Dealer{
 
     Hand hand;
 
     public PalacePlayer(Person player) {
-
-        this.hand = new PalaceHand();
+        ArrayList<Card> cards = new ArrayList<>();
+        this.hand = new PalaceHand(cards);
     }
 
 
