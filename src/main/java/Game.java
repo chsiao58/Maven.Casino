@@ -6,18 +6,17 @@ public abstract class Game {
 
     public Game(Player[] players) {
 
-        Player players;
-        Turn turn;
+        this.players = players;
 
-
+    }
 
     public Game(Player player) {
             this.player = player;
-        }
+    }
 
         //  abstract Boolean didWin(Player player);
         abstract void playGame ();
         abstract void endOfGame ();
 
     }
-}
+

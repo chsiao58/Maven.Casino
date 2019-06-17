@@ -25,7 +25,7 @@ public class BlackJack_Player extends Player implements Gambling {
       return false;}
     public void split() {
         if (chipCount >= 2){
-            bet()
+            bet();
         }
     }
     public void hitOrStay() {}

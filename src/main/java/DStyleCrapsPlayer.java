@@ -3,12 +3,6 @@ public class DStyleCrapsPlayer extends Player{
     Integer chips;
     Integer betchips;
 
-        House house=new House(2, null);
-        chips=house.moneyToChips(20.0);
-
-
-        //House house=new House(2);
-       // chips=house.moneyToChips();
 
     public  DStyleCrapsPlayer(Person player,Integer chips){
         this.person=player;

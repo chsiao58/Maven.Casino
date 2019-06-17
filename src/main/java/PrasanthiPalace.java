@@ -7,6 +7,7 @@ public class PrasanthiPalace {
 
     }
 
+
     public static void run() {
         Mediator mediator = new Mediator();
         mediator.enterLounge();
@@ -28,6 +29,40 @@ public class PrasanthiPalace {
 //        String first  = console.getStringInput("What would you like to do?");
 //        if(first.equalsIgnoreCase("5"))
 //            executeCraps(wallet, person);
+
+    //  Console console = new Console(System.in, System.out);
+      // mediator.parseInput(input);
+//        console.println("Welcome to our casino, Prasanthi's Palace!");
+//        console.println("Tell me a little about yourself");
+//        Integer age = console.getIntegerInput("How old are you?");
+//        String name = console.getStringInput("What's your name?");
+//        Double wallet = (age >= 21) ? console.getDoubleInput("How much money do you want to bet today?") : 0.0;
+//        Person person = new Person(wallet, name, age);
+//        console.println("You are currently in the lounge");
+//        console.println("There are five games available to play :");
+//        console.print("1) Palace\n2) Texas Hold 'Em\n3) Black Jack\n4) Cee-lo\n5) Dolio Style Craps\n");
+//        console.println("You can also hang out in the lounge and get a drink or a bite to eat.");
+//        String first  = console.getStringInput("What would you like to do?");
+//        if(first.equalsIgnoreCase("5"))
+//            executeCraps(wallet, person);
+
+//        mediator.enterLounge();
+//
+//    }
+//    public  static void executeCraps(Double wallet, Person person){
+//        Integer payOutratio=2;
+//        Integer betchips=0;
+//        House house=new House(payOutratio);
+//        DStyleCrapsPlayer player=new DStyleCrapsPlayer(person,house.moneyToChips(wallet));
+//        betchips=house.moneyToChips(wallet);
+//        DolioStyleCraps craps=new DolioStyleCraps(player);
+//        craps.playGame();
+//        craps.endOfGame();
+//        if(craps.didWin(player)) {
+//            System.out.println("You won "+house.payout(betchips)+" Chips");
+//        }
+  //  }
+
 
 
     }

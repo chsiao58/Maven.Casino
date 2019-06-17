@@ -5,6 +5,10 @@ import java.util.Random;
 public class House implements Dealer {
 
 
+    public House(Integer payoutRatio) {
+        this.payoutRatio = payoutRatio;
+    }
+
     public void payout() {}
     public void takeBets() {}
 
