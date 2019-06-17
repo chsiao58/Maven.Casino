@@ -1,10 +1,12 @@
+import exceptions.NegativeBetException;
+
 import java.util.ArrayList;
 
 public class BlackJack_Player extends Player implements Gambling {
 
     private Person player;
     Integer bet;
-
+    Integer sumHand = 0;
 
 
 
@@ -12,6 +14,7 @@ public class BlackJack_Player extends Player implements Gambling {
         super(player);
     }
 
+<<<<<<< HEAD
     public Boolean didWin(){ return false;}
     public void makeMove(){}
     public void leaveGame(){}
@@ -30,3 +33,6 @@ public class BlackJack_Player extends Player implements Gambling {
         return null;
     }
 }
+=======
+
+>>>>>>> ada73ca9ac4742d37a82da0884bebf26e8ff6d52
