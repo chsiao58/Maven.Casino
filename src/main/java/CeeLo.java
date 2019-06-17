@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class CeeLo extends DiceGame {
-   private Integer pool;
+   private Double pool;
 
    public CeeLo(CeeLoPlayer ...player) {
       super(player, 3);
@@ -9,11 +9,11 @@ public class CeeLo extends DiceGame {
 
    public void takeTurn( ){}
    public void setNumber(){}
-   public Integer getNumberToBeat(){
+   public Integer getNumberToBeat(Integer[] numberToBeat){
        return 0;
    }
 
-   Boolean didWin(Player player) {
+   Boolean didWin(Integer[] player) {
       return null;
    }
 
@@ -24,4 +24,10 @@ public class CeeLo extends DiceGame {
    void endOfGame() {
 
    }
+
+   public Double getPool() {
+      return pool;
+   }
+
+
 }

@@ -156,7 +156,7 @@ public class Mediator {
         gameContinue = false;
     }
 
-    private Boolean isUnderage() {
+    protected Boolean isUnderage() {
         if (person == null) return true;
         return (person.getAge() < 21);
     }
