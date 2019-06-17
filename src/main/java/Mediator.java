@@ -9,14 +9,11 @@ public class Mediator {
     public Mediator() {
         this.console = new Console(System.in, System.out);
         gameContinue = true;
-<<<<<<< HEAD
         enterLounge();
         while (gameContinue) {
             String input = console.getStringInput("What would you like to do?");
             parseInput(input);
         }
-=======
->>>>>>> ada73ca9ac4742d37a82da0884bebf26e8ff6d52
 
     }
 
@@ -29,14 +26,6 @@ public class Mediator {
         console.println("While in the lounge you can get a drink or a bite to eat.");
     }
 
-
-    private void playCraps() {
-        if (isUnderage()) {
-            printUnderageWarning();
-        } else {
-            return;
-        }
-    }
 
     private void playBlackJack() {
         if (isUnderage()) {
@@ -66,13 +55,12 @@ public class Mediator {
     private void playPalace() {
     }
 
-<<<<<<< HEAD
     public Person makePerson() {
         console.println("Tell us a little about yourself");
         Integer age = console.getIntegerInput("How old are you?");
         String name = firstLetterUppercase(console.getStringInput("What's your name?"));
         //Double wallet = (age >= 21) ? console.getDoubleInput("How much money do you want to bet today?") : 0.0;
-        Double wallet = console.getDoubleInput("How much money have you brought with you today?");
+        Double wallet = console.getDoubleInput("How much money will we manage for you today?");
         return new Person(wallet, name, age);
     }
 
@@ -101,21 +89,24 @@ public class Mediator {
         }
         console.println("You have returned to our luxurious lounge.");
     }
+
     public void getFood() {
         console.println("Welcome to Stefun's Sustainable Eatery");
-        if (person.getWallet() < 15) console.println("C'mon, how're you going to eat with that amount of money. You can have some water.");
+        if (person.getWallet() < 15)
+            console.println("C'mon, how're you going to eat with that amount of money. You can have some water.");
         else {
             String food = firstLetterUppercase(console.getStringInput("We can make just about anything. What do you want?"));
             console.println(String.format("%s, straight from the kitchen. Fifteen dollars please.", food));
-            person.setWallet(person.getWallet()-15);
+            person.setWallet(person.getWallet() - 15);
             String finished = console.getStringInput("Done eating?");
-            if (finished.equals("yes")) console.println("Sorry, we have quite the wait. I'd appreciate it if you could leave");
+            if (finished.equals("yes"))
+                console.println("Sorry, we have quite the wait. I'd appreciate it if you could leave");
             else console.println("Too bad, someone else needs your table. Here's a container for your food.");
         }
-=======
+    }
 
-
-    private void playCraps(){//Double wallet, Person person) 
+    private void playCraps(){
+        //Double wallet, Person person)
 
         Integer payOutRatio=2;
         Integer betchips=0;
@@ -132,60 +123,8 @@ public class Mediator {
     }
 
 
-        public Person makePerson() {
-            console.println("Tell us a little about yourself");
-            Integer age = console.getIntegerInput("How old are you?");
-            String name = console.getStringInput("What's your name?");
-            //Double wallet = (age >= 21) ? console.getDoubleInput("How much money do you want to bet today?") : 0.0;
-            Double wallet = console.getDoubleInput("How much money have you brought with you today?");
-            Person person = new Person(wallet, name, age);
-            return person;
-        }
-
-        public void printOptions() {
-            console.println("There are five games available to play :");
-            console.print("1) Palace\n2) Texas Hold 'Em\n3) Black Jack\n4) Cee-lo\n5) Dolio Style Craps\n");
-            console.println("While in the lounge you can get a drink or a bite to eat.");
-            console.println("Let us know what you want to do");
-        }
-
-        public void getDrink() {
-            console.println("Welcome to Will's Watering Hole");
-            if (person.getWallet() <= 0) console.println("Remember, our drinks cost money. Would you like some water?");
-            else {
-                String drink = console.getStringInput("I can make you any drink, any way you want. What would you like?");
-                console.println(String.format("%s, served just the way you like it. That'll be 8 dollars", drink));
-                String finished = console.getStringInput("Done drinking?");
-                if (finished.equals("yes"))
-                    console.println("Sorry, we have a one drink limit. You'll have to leave now");
-                else console.println("Too bad, someone else needs your stool. Take your drink with you.");
-            }
-            console.println("You have returned to our luxurious lounge.");
-
-        }
-
-        public void getFood() {
-            console.println("Welcome to Stefun's Sustainable Eatery");
-            if (person.getWallet() <= 0) {
-                console.println("C'mon, how're you going to eat without any money. You can have some water.");
-            } else {
-                String food = console.getStringInput("We can make just about anything. What do you want?");
-                console.println(String.format("%s, straight from the kitchen.", food));
-                String finished = console.getStringInput("Done eating?");
-                if (finished.equals("yes"))
-                    console.println("Sorry, we have quite the wait. I'd appreciate it if you leave");
-                else console.println("Too bad, someone else needs your table. Here's a container for your food.");
-            }
->>>>>>> ada73ca9ac4742d37a82da0884bebf26e8ff6d52
-        console.println("You have returned to the beautiful lounge.");
-
-    }
-
-<<<<<<< HEAD
     public void parseInput(String input){
         Action action = new Action(input);
-=======
->>>>>>> ada73ca9ac4742d37a82da0884bebf26e8ff6d52
         Act act = action.getAct();
             switch(act){
             case QUIT:
@@ -216,16 +155,13 @@ public class Mediator {
             playCraps();
             break;
             case LOUNGE:
-<<<<<<< HEAD
                 enterLounge();
                 break;
             case UNKNOWN:
                 console.println("We're not sure what you meant by that. Can you be more specific?");
                 break;
         }
-=======
 
->>>>>>> ada73ca9ac4742d37a82da0884bebf26e8ff6d52
     }
 
     private void leaveGame() {
@@ -237,7 +173,7 @@ public class Mediator {
         if (person == null) return true;
         return (person.getAge() < 21);
     }
-<<<<<<< HEAD
+
 
     private void printUnderageWarning() {
         console.println("This game is not available for those under 21.");
@@ -251,6 +187,5 @@ public class Mediator {
         String first = String.valueOf(firstLetter).toUpperCase();
         return first + input.substring(1);
     }
-=======
->>>>>>> ada73ca9ac4742d37a82da0884bebf26e8ff6d52
+
 }
