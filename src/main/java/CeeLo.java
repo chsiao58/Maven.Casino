@@ -37,13 +37,13 @@ public class CeeLo extends DiceGame {
       if (!gameStarted) return;
       while (!gameOver) {
          console.println("Computer goes first.");
-         CeeLoTurn compTurn = new CeeLoTurn(dice, console);
+         CeeLoTurn compTurn = new CeeLoTurn(super.dice, console);
          if (compTurn.getWinner()) {
             gameOver = true;
             break;
          }
          console.println("Your turn now.");
-         CeeLoTurn playerTurn = new CeeLoTurn(dice, console);
+         CeeLoTurn playerTurn = new CeeLoTurn(super.dice, console);
          playerTurn.play();
          if (playerTurn.getWinner()) {
             gameOver = true;

@@ -21,7 +21,7 @@ public class CeeLoTurn extends Turn {
     public void move(){  }
 
     public Integer roll() {
-        return dice.toss();
+        return dice.tossAndSum();
     }
     public Integer compare(){return 1;}
 
@@ -30,6 +30,7 @@ public class CeeLoTurn extends Turn {
     }
 
     public Boolean checkDouble(Integer[] dice) {
+        if (dice == null) return false;
         Integer firstDie = dice[0];
         Integer secondDie = dice[1];
         Integer thirdDie = dice[2];
@@ -54,12 +55,13 @@ public class CeeLoTurn extends Turn {
     }
 
     public Boolean checkTriple(Integer[] dice) {
+        if (dice == null) return false;
         Arrays.sort(dice);
         Integer firstDie = dice[0];
         Integer secondDie = dice[1];
         Integer thirdDie = dice[2];
         if ((firstDie == 4) && (secondDie == 5) && (thirdDie == 6)) {
-            console.println("Congratulations, that was a winning roll.");
+            console.println("That was a winning roll.");
             playerWon = true;
             return true;
         }
