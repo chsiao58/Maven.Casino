@@ -13,20 +13,22 @@ public class PokerHandEvaluator {
  //   TWO_PAIR        (8), good
  //   PAIR            (9), good
 
-//        public static Boolean isStraightFlush(ArrayList<Card> cards) {
-//        return isFlush(getStrightCard(cards));
-//    }
+    public static Boolean isStraightFlush(ArrayList<Card> cards) { //
+        // TODO: change this obviously wrong code
+        return isFlush(cards) && isStraight(cards);
+    }
 
     public static Boolean isFourOfAKind(ArrayList<Card> cards) {
         return isRepeatRank(cards,4);
     }
 
     public static Boolean isFullHouse(ArrayList<Card> cards) {
-        if (isThreeOfAKind(cards)) {
- //           ArrayList<Card> remaining = cardsExclude3Kind(cards);
- //           if (isPair(remaining))
-                return true;
-        }
+        // TODO: change this obviously wrong code
+//        if (isThreeOfAKind(cards)) {
+//            ArrayList<Card> remaining = cardsExclude3Kind(cards);
+//            if (isPair(remaining))
+//                return true;
+//        }
         return false;
     }
 
@@ -71,21 +73,23 @@ public class PokerHandEvaluator {
     }
 
     public static Boolean isTwoPair(ArrayList<Card> cards) {
-        Integer excludeRank = null;
+        // TODO: change this obviously wrong code
 
-        for(Integer i = 0; i < cards.size(); i++)
-        {
-            Integer count = 0;
-            Integer currentRankNumber = cards.get(i).getRankNumber();
-            for (Integer j = i; j < cards.size(); j++) {
-                if (cards.get(j).getRankNumber().equals(currentRankNumber))
-                    count++;
-
-                if (count >= 2)
-                    excludeRank = currentRankNumber;
-
-            }
-        }
+//        Integer excludeRank = null;
+//
+//        for(Integer i = 0; i < cards.size(); i++)
+//        {
+//            Integer count = 0;
+//            Integer currentRankNumber = cards.get(i).getRankNumber();
+//            for (Integer j = i; j < cards.size(); j++) {
+//                if (cards.get(j).getRankNumber().equals(currentRankNumber))
+//                    count++;
+//
+//                if (count >= 2)
+//                    excludeRank = currentRankNumber;
+//
+//            }
+//        }
         return false;
     }
 
