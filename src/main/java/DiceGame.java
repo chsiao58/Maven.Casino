@@ -1,0 +1,17 @@
+import java.util.ArrayList;
+
+public abstract class DiceGame extends Game {
+    protected Dice dice;
+
+    public DiceGame(Player players, Integer numberOfDice) {
+        super(players);
+        dice = new Dice(numberOfDice);
+
+    }
+
+    public Dice getDice() {
+        return dice;
+    }
+
+
+}
